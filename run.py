@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, render_template, request, url_for
-#from RandomStuff import LED_Blink
+import socket
+from RandomStuff import LED_Blink
 
 
 app = Flask(__name__)
-#app.config.from_object('config')
+hostname = socket.gethostname()
+IP = socket.gethostbyname(hostname)
+print(IP)
 
 
 @app.route('/')
@@ -29,10 +32,10 @@ def contact():
     if request.method == 'POST':
         if request.form.get('Blinky') == 'blink':
             print("blinking!!")
-            return "Blinking!"
+            LED_Blink.start()
     return render_template("blink.html")
 
 
 if __name__ == '__main__':
+    #app.run()
     app.run(host='0.0.0.0', port=80, debug=True)
-    app.add_url_rule('/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
