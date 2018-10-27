@@ -1,13 +1,12 @@
 from flask import Flask, jsonify, render_template, request, url_for
 import socket
-from gpiozero import LED
 from RandomStuff import Traffic_Light
 
 
 app = Flask(__name__)
 hostname = socket.gethostname()
 IP = socket.gethostbyname(hostname)
-print(IP)
+#print(IP)
 
 
 @app.route('/')
