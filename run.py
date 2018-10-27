@@ -1,14 +1,10 @@
 #!/usr/bin/python
 
 from flask import Flask, jsonify, render_template, request, url_for
-import socket
 from RandomStuff import Traffic_Light
 
 
 app = Flask(__name__)
-hostname = socket.gethostname()
-IP = socket.gethostbyname(hostname)
-#print(IP)
 
 
 @app.route('/')

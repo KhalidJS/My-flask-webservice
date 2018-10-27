@@ -29,3 +29,8 @@ class TrafficLight:
             yellow.off()
             green.on()
             sleep(7)
+            green.off()
+            sleep(2)
+            yellow.on()
+            sleep(5)
+            yellow.off()
