@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, render_template, request, url_for
 import socket
 from gpiozero import LED
+from RandomStuff import Traffic_Light
 
 
 app = Flask(__name__)
@@ -32,8 +33,8 @@ def contact():
     if request.method == 'POST':
         if request.form.get('Blinky') == 'blink':
             print("blinking!!")
-            led = LED(2)
-            led.blink(2, 1)
+            x = Traffic_Light.TrafficLight(2, 4, 21)
+            x.start_traffic_light(True)
     return render_template("blink.html")
 
 
