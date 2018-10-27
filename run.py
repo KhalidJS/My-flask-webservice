@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from flask import Flask, jsonify, render_template, request, url_for
 import socket
 from RandomStuff import Traffic_Light
