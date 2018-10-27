@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template, request, url_for
 
 
 app = Flask(__name__)
-app.config.from_object('config')
+#app.config.from_object('config')
 
 
 @app.route('/')
