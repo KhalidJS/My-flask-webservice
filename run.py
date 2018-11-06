@@ -20,7 +20,7 @@ def get_name(name):
 @app.route('/data', methods=['GET'])
 def names():
     if request.method == 'GET':
-        data = {"Names": ["Anna", "Joanna", "Thomas", "CK", "John"]}
+        data = {"Names": ["Anna", "Joanna", "Thomas", "CK", "John", "Mick"]}
         return jsonify(data)
     return
 
@@ -37,4 +37,4 @@ def contact():
 
 if __name__ == '__main__':
     #app.run()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=4999, debug=True)
